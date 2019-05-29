@@ -4,6 +4,7 @@ module.exports = {
     description: `Kinyanjui Wangonya's blog.`,
     author: `@wangonya`,
     avatar: `https://avatars0.githubusercontent.com/u/19375569?s=460&v=4`,
+    siteUrl: `https://wangonya.com/`,
   },
   plugins: [
     {
