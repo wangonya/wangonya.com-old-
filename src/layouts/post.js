@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import DefaultLayout from "../layouts/default"
 import SEO from "../components/seo"
@@ -11,6 +12,12 @@ const PostTemplate = ({ data, pageContext }) => {
   return (
     <DefaultLayout>
       <SEO title={frontmatter.title} />
+      <Helmet>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
+          async
+        />
+      </Helmet>
       <article>
         <div className="center">
           <h1 className="title">{frontmatter.title}</h1>
