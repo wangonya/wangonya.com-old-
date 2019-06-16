@@ -47,7 +47,7 @@ Remember when I told you to only test the program with small values of `n`? Here
 As it stands, every call to `fib()` results in two more calls to `fib()` in the `return` statement. The call tree grows exponentially. 15 calls are required to compute `fib(5)`, 177 calls for `fib(10)`, 21,891 for `fib(20)`... you get the point. To solve this problem, we can use [memoization](https://www.ocf.berkeley.edu/~shidi/cs61a/wiki/Memoization).
 
 Memoization helps avoid unnecessary calculation of the same values if they were already previously calculated. It works just like memorization for humans. You already have `2 x 2` memorized and can give the answer immediately without having to use a calculator. `799 x 377`? You probably need to use a calculator for that. If, for some reason, you find that you get asked `799 x 377` a lot, it would be nice to have it memorized so you don't have to calculate it every other time. The value of
-`799 x 377` will always remain the same, so all you have to do is calculated it once, save the value in your "cache" (memory), and retrieve it every time you need it.
+`799 x 377` will always remain the same, so all you have to do is calculate it once, save the value in your "cache" (memory), and retrieve it every time you need it.
 
 Luckily, python has a [built-in decorator](https://docs.python.org/3/library/functools.html#functools.lru_cache) that does just that.
 
