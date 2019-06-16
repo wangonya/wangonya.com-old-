@@ -1,5 +1,5 @@
 ---
-title: Solving Fibonacci sequence with Python recursion and memoization
+title: Fibonacci sequence with Python recursion and memoization
 date: 2019-06-16
 description: Learn about recursion and memoization by solving the fibonacci sequence with python
 ---
