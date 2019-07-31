@@ -11,7 +11,7 @@ const PostTemplate = ({ data, pageContext }) => {
   const { next, prev } = pageContext
   return (
     <DefaultLayout>
-      <SEO title={frontmatter.title} />
+      <SEO title={frontmatter.title} description={frontmatter.description} />
       <Helmet>
         <script
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
@@ -67,6 +67,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        description
       }
     }
   }
