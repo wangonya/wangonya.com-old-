@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import DefaultLayout from "../layouts/default"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 import { groupBy, getDateYear } from "../utils"
