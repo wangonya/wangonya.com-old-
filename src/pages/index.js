@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
     posts.map(post => (
       <li key={post.node.id}>
         <div className="post-date code">
-          <small>{post.node.frontmatter.date}</small>
+          <small>{post.node.frontmatter.date.split(",")[0]}</small>
         </div>
         <div className="title">
           <Link to={post.node.fields.slug}>{post.node.frontmatter.title}</Link>
