@@ -26,6 +26,18 @@ const PostTemplate = ({ data, pageContext }) => {
           </span>
         </div>
         <div className="divider" />
+        {frontmatter.series && (
+          <small className="code">
+            This blog is part of the "{frontmatter.series}" series.
+            <div class="container">
+              <div class="timeline-item" date-is="20-07-1990"></div>
+
+              <div class="timeline-item" date-is="20-07-1990"></div>
+
+              <div class="timeline-item" date-is="20-07-1990"></div>
+            </div>
+          </small>
+        )}
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
       <div className="page-navigation code">
@@ -68,6 +80,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        series
       }
     }
   }
