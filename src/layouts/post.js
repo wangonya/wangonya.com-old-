@@ -1,10 +1,19 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { StaticQuery, Link, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import DefaultLayout from "../layouts/default"
 import SEO from "../components/seo"
 
+const showSeriesList = seriesList =>
+  seriesList.map(series => (
+    <div
+      key={series.node.id}
+      className="timeline-item"
+      title={series.node.frontmatter.title}
+      to={series.node.fields.slug}
+    />
+  ))
 const PostTemplate = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
@@ -29,12 +38,8 @@ const PostTemplate = ({ data, pageContext }) => {
         {frontmatter.series && (
           <small className="code">
             This blog is part of the "{frontmatter.series}" series.
-            <div class="container">
-              <div class="timeline-item" date-is="20-07-1990"></div>
-
-              <div class="timeline-item" date-is="20-07-1990"></div>
-
-              <div class="timeline-item" date-is="20-07-1990"></div>
+            <div className="container">
+              {showSeriesList(data.allMarkdownRemark.edges)}
             </div>
           </small>
         )}
@@ -73,7 +78,7 @@ const PostTemplate = ({ data, pageContext }) => {
 export default PostTemplate
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query($slug: String!, $series: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -81,6 +86,19 @@ export const pageQuery = graphql`
         title
         description
         series
+      }
+    }
+    allMarkdownRemark(filter: { frontmatter: { series: { eq: $series } } }) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
       }
     }
   }

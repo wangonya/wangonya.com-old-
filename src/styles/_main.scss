@@ -419,13 +419,13 @@ code {
 $border-color: rgba(black, .3);
 
 .timeline-item {
-	padding: 3em 2em 2em;
+	padding: 3em 2em .3em;
 	position: relative;
 	color: rgba(black, .7);
 	border-left: 2px solid $border-color;
 
 	&::before {
-		content: attr(date-is);
+		content: attr(title);
 		position: absolute;
 		left: 2em;
 		font-weight: bold;
