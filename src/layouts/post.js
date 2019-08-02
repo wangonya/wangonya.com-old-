@@ -1,5 +1,5 @@
 import React from "react"
-import { StaticQuery, Link, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import DefaultLayout from "../layouts/default"
@@ -7,12 +7,9 @@ import SEO from "../components/seo"
 
 const showSeriesList = seriesList =>
   seriesList.map(series => (
-    <div
-      key={series.node.id}
-      className="timeline-item"
-      title={series.node.frontmatter.title}
-      to={series.node.fields.slug}
-    />
+    <Link to={series.node.fields.slug} key={series.node.id}>
+      <div title={series.node.frontmatter.title} className="timeline-item" />
+    </Link>
   ))
 const PostTemplate = ({ data, pageContext }) => {
   const { markdownRemark } = data
