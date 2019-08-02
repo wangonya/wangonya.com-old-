@@ -4,11 +4,22 @@ import { Helmet } from "react-helmet"
 
 import DefaultLayout from "../layouts/default"
 import SEO from "../components/seo"
+import Claps from "../components/clap"
 
-const showSeriesList = seriesList =>
+const styles = {
+  fontWeight: "bold",
+}
+
+const showSeriesList = (seriesList, frontmatter) =>
   seriesList.map(series => (
     <Link to={series.node.fields.slug} key={series.node.id}>
-      <div title={series.node.frontmatter.title} className="timeline-item" />
+      <div
+        title={series.node.frontmatter.title}
+        className="timeline-item"
+        style={
+          frontmatter.title === series.node.frontmatter.title ? styles : {}
+        }
+      />
     </Link>
   ))
 const PostTemplate = ({ data, pageContext }) => {
@@ -36,11 +47,12 @@ const PostTemplate = ({ data, pageContext }) => {
           <small className="code">
             This blog is part of the "{frontmatter.series}" series.
             <div className="container">
-              {showSeriesList(data.allMarkdownRemark.edges)}
+              {showSeriesList(data.allMarkdownRemark.edges, frontmatter)}
             </div>
           </small>
         )}
         <div dangerouslySetInnerHTML={{ __html: html }} />
+        {frontmatter.date && <Claps />}
       </article>
       <div className="page-navigation code">
         {prev && (
