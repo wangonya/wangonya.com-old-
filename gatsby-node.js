@@ -19,6 +19,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               title
+              series
             }
           }
         }
@@ -37,6 +38,7 @@ exports.createPages = ({ actions, graphql }) => {
           slug: node.fields.slug,
           prev: index === 0 ? null : posts[index - 1].node,
           next: index === posts.length - 1 ? null : posts[index + 1].node,
+          series: node.frontmatter.series,
         },
       })
     })
