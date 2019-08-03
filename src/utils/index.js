@@ -1,4 +1,5 @@
 import mojs from "@mojs/core"
+import axios from "axios"
 
 // group items array based on the
 // value returned by calling fn with the current iterated item
@@ -19,12 +20,17 @@ export const groupBy = (items, fn) =>
 export const getDateYear = ({ node }) =>
   new Date(node.frontmatter.date).getFullYear()
 
-export const postClaps = () => {
+export const postClaps = async slug => {
+  let initialNumberOfClaps
+  const clapsUrl = `https://wangonya-bf0b7.firebaseio.com/posts/${slug}/likes.json`
+  try {
+    const response = await axios.get(clapsUrl)
+    initialNumberOfClaps = response.data
+  } catch (e) {}
   const clap = document.getElementById("clap")
   const clapIcon = document.getElementById("clapIcon")
   const clapCount = document.getElementById("clapCount")
   const clapTotalCount = document.getElementById("clapCountTotal")
-  const initialNumberOfClaps = 0 //generateRandomNumber(500, 10000)
   const tlDuration = 300
   let numberOfClaps = 0
   let clapHold
@@ -119,13 +125,12 @@ export const postClaps = () => {
     clapIcon.classList.add("checked")
   }
 
-  function updateNumberOfClaps() {
+  async function updateNumberOfClaps() {
     numberOfClaps < 10 ? numberOfClaps++ : null
     clapCount.innerHTML = "+" + numberOfClaps
     clapTotalCount.innerHTML = initialNumberOfClaps + numberOfClaps
-  }
-
-  function generateRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
+    try {
+      await axios.put(clapsUrl, initialNumberOfClaps + numberOfClaps)
+    } catch (e) {}
   }
 }
