@@ -6,9 +6,7 @@ class Claps extends Component {
     super(props)
   }
   componentDidMount() {
-    if (typeof window !== "undefined") {
-      postClaps(this.props.slug)
-    }
+    postClaps(this.props.slug)
   }
   render() {
     return (
