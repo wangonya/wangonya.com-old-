@@ -1,4 +1,3 @@
-import mojs from "@mojs/core"
 import axios from "axios"
 
 // group items array based on the
@@ -22,6 +21,7 @@ export const getDateYear = ({ node }) =>
 
 export const postClaps = async slug => {
   if (typeof window !== "undefined") {
+    const mojs = require("@mojs/core")
     let initialNumberOfClaps
     const clapsUrl = `https://wangonya-bf0b7.firebaseio.com/posts/${slug}/likes.json`
     try {
