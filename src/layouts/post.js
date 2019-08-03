@@ -52,7 +52,8 @@ const PostTemplate = ({ data, pageContext }) => {
           </small>
         )}
         <div dangerouslySetInnerHTML={{ __html: html }} />
-        {frontmatter.date && <Claps />}
+        <br />
+        {frontmatter.date && <Claps slug={pageContext.slug.slice(6, -1)} />}
       </article>
       <div className="page-navigation code">
         {prev && (
