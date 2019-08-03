@@ -408,3 +408,137 @@ code {
   font-size: 13px !important;
   font-family: Consolas, monaco, monospace !important;
 }
+
+// series
+.container {
+	max-width: 1024px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+$border-color: rgba(black, .3);
+
+.timeline-item {
+	padding: 3em 2em .3em;
+	position: relative;
+	color: rgba(black, .7);
+	border-left: 2px solid $border-color;
+
+	&::before {
+		content: attr(title);
+		position: absolute;
+		left: 2em;
+		top: 1em;
+		display: block;
+		// font-weight: 700;
+		font-size: .785rem;
+	}
+
+	&::after {
+		width: 10px;
+		height: 10px;
+		display: block;
+		top: 1em;
+		position: absolute;
+		left: -7px;
+		border-radius: 10px;
+		content: '';
+		border: 2px solid $border-color;
+		background: white;
+	}
+    // &:first-child {
+		// border-image: linear-gradient(
+			// to top,
+			// $border-color 60%,
+			// rgba($border-color, 0)) 1 100%
+		// ;
+	// }
+	// &:last-child {
+		// border-image: linear-gradient(
+			// to bottom,
+			// $border-color 60%,
+			// rgba($border-color, 0)) 1 100%
+		// ;
+	// }
+}
+
+// claps
+$btn-dimension: 60px;
+$primary-color: rgba(189,195,199 ,1);
+$secondary-color: rgba(241,78,50 ,1);
+@mixin debug {
+  outline: 1px solid red;
+}
+
+.claps-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clap {
+  position: relative;
+  outline: 0 solid transparent;
+  border-radius: 50%;
+  border: 0 solid $primary-color;
+  width: $btn-dimension;
+  height: $btn-dimension;
+  background: none;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50%;
+    //border: 1px solid $primary-color;
+    width: $btn-dimension - 1px;
+    height: $btn-dimension - 1px;
+  }
+  &:hover {
+   cursor: pointer;
+   border: .3px solid $secondary-color;
+   transition: border-color 3s ease-in;
+    &:after {
+      animation: shockwave 3s ease-in infinite;
+    }
+  }
+  .clap--count {
+    position: absolute;
+    top: -$btn-dimension/1.6;
+    left: $btn-dimension/4;
+    font-size: 0.8rem;
+    color: white;
+    background: $secondary-color;
+    border-radius: 50%;
+    height: $btn-dimension/2;
+    width: $btn-dimension/2;
+    line-height: $btn-dimension/2;
+  }
+  .clap--count-total {
+    position: absolute;
+    font-size: 0.8rem;
+    width: $btn-dimension;
+    text-align: center;
+    left: 0;
+    top: -$btn-dimension/3.5;
+    color: $primary-color;
+  }
+}
+
+@keyframes shockwave {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 2px $secondary-color;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    box-shadow: 0 0 50px darken($secondary-color, 20%), inset 0 0 10px $secondary-color;
+  }
+}
+
+.clap-icon {
+  font-size: 32px;
+}

@@ -19,9 +19,13 @@ const IndexPage = ({ data }) => {
           <small>{post.node.frontmatter.date.split(",")[0]}</small>
         </div>
         <div className="title">
-          {post.node.frontmatter.math ?
-          <a href={post.node.fields.slug}>{post.node.frontmatter.title}</a> :
-          <Link to={post.node.fields.slug}>{post.node.frontmatter.title}</Link>}
+          {post.node.frontmatter.math ? (
+            <a href={post.node.fields.slug}>{post.node.frontmatter.title}</a>
+          ) : (
+            <Link to={post.node.fields.slug}>
+              {post.node.frontmatter.title}
+            </Link>
+          )}
         </div>
       </li>
     ))

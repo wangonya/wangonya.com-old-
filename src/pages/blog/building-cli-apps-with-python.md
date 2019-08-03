@@ -2,6 +2,7 @@
 title: Building Command-Line Applications with Python
 date: 2019-08-01
 description: Building CLI Apps with Python - Series Intro
+series: Building CLI Apps with Python
 ---
 
 You can do a lot of amazing things with Python. When I started teaching myself Python last year, one of the most interesting things I discovered was how relatively easy it was to create CLI apps. Since I learn best by doing, I went ahead to create [norris-cli](https://github.com/wangonya/norris-cli) among other apps, and discovered the possibilities were endless 😄.
