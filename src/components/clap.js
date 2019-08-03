@@ -4,10 +4,9 @@ import { postClaps } from "../utils"
 class Claps extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
   }
   componentDidMount() {
-    postClaps()
+    postClaps(this.props.slug)
   }
   render() {
     return (
