@@ -98,7 +98,10 @@ export const pageQuery = graphql`
         series
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { series: { eq: $series } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { series: { eq: $series } } }
+      sort: { order: ASC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           id
