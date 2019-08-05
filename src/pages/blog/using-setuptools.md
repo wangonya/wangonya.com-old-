@@ -2,6 +2,7 @@
 title: Using setuptools to package your Python app
 date: 2019-08-05
 series: Building CLI Apps with Python
+description: Using setuptools to package your Python app
 ---
 
 In our previous post, we made a Hello World! app to get us started with Click. You might have noticed though that we needed to do `python hello-world.py` to run it. Since we're building CLI apps, that's just not cool 😅 and it's not how CLI apps work anyway. We need to be able to run a single command, something like:
