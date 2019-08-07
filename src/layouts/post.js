@@ -45,7 +45,7 @@ const PostTemplate = ({ data, pageContext }) => {
         <div className="divider" />
         {frontmatter.series && (
           <small className="code">
-            This blog is part of the "{frontmatter.series}" series.
+            This post is part of the "{frontmatter.series}" series.
             <div className="container">
               {showSeriesList(data.allMarkdownRemark.edges, frontmatter)}
             </div>

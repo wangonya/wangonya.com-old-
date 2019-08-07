@@ -89,7 +89,7 @@ entry_points='''
 
 This is the part that saves us the hassle of having to run the app with `python ...` everytime, and enables us to just execute `hello` to run it.
 
-![entry_points-image](images/setup.png)
+![entry_points parameters](images/setup.png)
 
 <small><strong>It's important to note that if we maintained our previous name </strong>(`hello-world.py`)<strong>, the </strong>`setup` <strong>would have failed at </strong>`entry_points`. <strong> This is because python module names shouldn't have dashes.</strong></small>
 
