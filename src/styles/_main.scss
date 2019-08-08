@@ -542,3 +542,23 @@ $secondary-color: rgba(241,78,50 ,1);
 .clap-icon {
   font-size: 32px;
 }
+
+//figcaption
+figcaption {
+  color: #f14e32;
+  font-size: .8em;
+  text-align: center;
+  font-family: Consolas, monaco, monospace;
+}
+
+article {
+	counter-reset: figures;
+}
+
+figure figcaption {
+	counter-increment: figures;
+}
+
+figure figcaption:before {
+	content: 'Fig. ' counter(figures) ' - ';
+}
