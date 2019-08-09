@@ -47,7 +47,14 @@ const PostTemplate = ({ data, pageContext }) => {
           <small className="code">
             This post is part of the "{frontmatter.series}" series.
             <div className="container">
+              <input
+                type="checkbox"
+                className="show-full-state"
+                id="show-full"
+              />
               {showSeriesList(data.allMarkdownRemark.edges, frontmatter)}
+              <br />
+              <label htmlFor="show-full" className="show-full-trigger" />
             </div>
           </small>
         )}
