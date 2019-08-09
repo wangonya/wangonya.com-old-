@@ -419,7 +419,7 @@ code {
 $border-color: rgba(black, .3);
 
 .timeline-item {
-	padding: 3em 2em .3em;
+	padding: 3em 2em .1em;
 	position: relative;
 	color: rgba(black, .7);
 	border-left: 2px solid $border-color;
@@ -446,20 +446,49 @@ $border-color: rgba(black, .3);
 		border: 2px solid $border-color;
 		background: white;
 	}
-    // &:first-child {
-		// border-image: linear-gradient(
-			// to top,
-			// $border-color 60%,
-			// rgba($border-color, 0)) 1 100%
-		// ;
-	// }
-	// &:last-child {
-		// border-image: linear-gradient(
-			// to bottom,
-			// $border-color 60%,
-			// rgba($border-color, 0)) 1 100%
-		// ;
-	// }
+}
+
+.show-full-state {
+  display: none;
+}
+
+a:nth-of-type(n+4) .timeline-item {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+}
+
+.show-full-state:checked ~ a:nth-of-type(n+4) .timeline-item {
+  opacity: 1;
+  visibility: visible;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.show-full-state ~ .show-full-trigger:before {
+  content: 'Show more';
+}
+
+.show-full-state:checked ~ .show-full-trigger:before {
+  content: 'Show less';
+}
+
+.show-full-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: .25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  text-align: center;
 }
 
 // claps
