@@ -26,12 +26,6 @@ def hello(case):
     # click.echo('Hello World!')
 ```
 
-Every time a change is made to the code, we'll have to install the app again and run it to see the changes. So let's do that:
-
-```bash
-(venv) $ pip install --editable .
-```
-
 Then run the app, passing in the created option:
 
 ```bash
@@ -76,10 +70,6 @@ def hello(case):
 All we've done is add an `if-else` to check the option passed in, and return the text in either upper case, lower case, or just normal. Now when we install our app again and run it, we get these results:
 
 ```bash
-(venv) $ pip install --editable .
-
-...
-
 (venv) $ hello
 Hello World!
 
