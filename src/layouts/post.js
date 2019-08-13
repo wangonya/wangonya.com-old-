@@ -54,6 +54,7 @@ const PostTemplate = ({ data, pageContext }) => {
               />
               {showSeriesList(data.allMarkdownRemark.edges, frontmatter)}
               <br />
+              <br />
               <label htmlFor="show-full" className="show-full-trigger" />
             </div>
           </small>
@@ -61,6 +62,17 @@ const PostTemplate = ({ data, pageContext }) => {
         <div dangerouslySetInnerHTML={{ __html: html }} />
         <br />
         {frontmatter.date && <Claps slug={pageContext.slug.slice(6, -1)} />}
+        <br />
+        <span className="ad-free">
+          <a href="https://www.adfreeblog.org/" target="_blank">
+            {" "}
+            <img
+              src="https://i.ibb.co/1brQp7P/adfreebanner.jpg"
+              alt="ad free site"
+              width="200"
+            />
+          </a>
+        </span>
       </article>
       <div className="page-navigation code">
         {prev && (
