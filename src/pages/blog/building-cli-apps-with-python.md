@@ -16,8 +16,7 @@ Building these kinds of projects is a great way to learn, and it's super fun. To
 * Prompting users for input
 * CRUD (with an online API) **(Practice project)**
   * Working with data structures
-  * Writing to local files)
-  * Saving data to a sqlite database
+  * Writing to local files
 * Testing with pytest
 * Practice project
 * Posting a package on [Pypi](https://pypi.org/)
