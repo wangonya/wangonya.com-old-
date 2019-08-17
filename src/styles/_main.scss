@@ -591,3 +591,26 @@ figure figcaption {
 figure figcaption:before {
 	content: 'Fig. ' counter(figures) ' - ';
 }
+
+// ad-free
+.ad-free img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ad-free a:link {
+  text-decoration: none;
+}
+
+.ad-free a:visited {
+  text-decoration: none;
+}
+
+.ad-free a:hover {
+  text-decoration: none;
+}
+
+.ad-free a:active {
+  text-decoration: none;
+}
