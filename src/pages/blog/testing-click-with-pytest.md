@@ -11,20 +11,20 @@ It's good practice to, as much as possible, write tests for your code. If you're
 * [Capturing print statements while debugging](https://wangonya.com/blog/pytest-capture-print/)
 * [Skipping tests](https://wangonya.com/blog/pytest-skip/)
 
-For testing CLI apps, Click provides a convinient module: `click.testing` which has some useful functions (notably `CliRunner()`) to help us invoke commands and check their behaviour.
+For testing CLI apps, Click provides a convenient module: `click.testing` which has some useful functions (notably `CliRunner()`) to help us invoke commands and check their behavior.
 
 We'll go ahead and test each part of [our app](https://wangonya.com/blog/cli-crud-with-firebase/) - creating, reading, updating and deleting.
 
 ## Installing pytest and writing the first test
 pytest can be installed via pip:
 
-```console
+```
 (env) $ pip install pytest
 ```
 
 After installing pytest, create a tests folder in the root directory and add the first test file:
 
-```console
+```
 (env) $ mkdir tests && cd tests
 
 (env) $ touch test_app.py
@@ -39,7 +39,7 @@ def test_add():
 
 To run the test, run `pytest` on the terminal:
 
-```console
+```
 (env) $ pytest
 ================== test session starts ====================
 platform linux -- Python 3.7.3, pytest-5.1.0, py-1.8.0, pluggy-0.12.0
@@ -71,9 +71,9 @@ def test_add():
 
 First, we invoke the command as we would on the terminal, passing in the required arguments and options: `response = runner.invoke(add, ["test-user", "-m", "0"])`.
 
-We then check that the command executes successfuly: `assert response.exit_code == 0`.
+We then check that the command executes successfully: `assert response.exit_code == 0`.
 
-If the command executes successfuly, we expect a success message should be returned in the response with the values we added:
+If the command executes successfully, we expect a success message should be returned in the response with the values we added:
 
 ```python
 assert "Contact test-user added!" in response.output
@@ -104,3 +104,30 @@ def test_view():
 ```
 
 ## Testing the `update` command
+
+```python
+def test_update():
+    response = runner.invoke(update, ["test-user", "-m", "12345"])
+    assert response.exit_code == 0
+    assert "Contact updated!" in response.output
+    assert "{'mobile': '12345'}" in response.output
+```
+
+## Testing the `delete` command
+
+```python
+def test_delete():
+    response = runner.invoke(delete, "test-user")
+    assert response.exit_code == 0
+    assert "Contact deleted!" in response.output
+
+    # call view on test-user to confirm it doesn't exist
+    response = runner.invoke(view, "test-user")
+    assert response.exit_code == 0
+    assert "The contact you searched for doesn't exist" in response.output
+```
+
+## Improvements
+As your application grows, you may want to consider using [fixtures](https://docs.pytest.org/en/latest/fixture.html) and set up things like `runner` in a `conftest.py` file. We got away with it here because our tests were simple and all in a single file. Once multiple test files are introduced, following the approach we used here would lead to a lot of unnecessarily duplicated code.
+
+Also, we made direct calls to our API in the tests. This operation should ideally be mocked.
