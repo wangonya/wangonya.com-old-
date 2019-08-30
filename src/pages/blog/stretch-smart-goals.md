@@ -17,7 +17,7 @@ You know that nice feeling of crossing things off your to-do list? Closure. Whic
 >
 > "To-do lists are great if you're using them correctly. But when people say things like 'I sometimes write down easy items I can cross off right away, because it makes me feel good', that's exactly the _wrong_ way to create a to-do list. That signals you're using it for mood repair, rather than to become productive." - <small> Timothy Pychyl, quoted in the book </small>
 
-I think it's easier to fall into this trap than most of use would like to admit.
+I think it's easier to fall into this trap than most of us would like to admit.
 
 ## Combining SMART goals with Stretch goals
 
