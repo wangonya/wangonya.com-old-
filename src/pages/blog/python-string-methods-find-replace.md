@@ -134,7 +134,7 @@ string.index(substring, start, end)
 
 #### Return value
 
-Returns an integer value pointing to the index of first occurrence of the
+Returns an integer value pointing to the index of the first occurrence of the
  substring. If the substring is not found, a ValueError exception is raised.
 
 #### Example
