@@ -614,3 +614,30 @@ figure figcaption:before {
 .ad-free a:active {
   text-decoration: none;
 }
+
+// social
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css");
+
+.social-links{
+  font-size: 19px;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.social-links a{
+  width: 25px;
+  height: 25px;
+  line-height: 25px !important;
+  position: relative;
+  margin: 0 5px;
+  text-align: center;
+  display: inline-block;
+  color: #111;
+  border-bottom: none !important;
+}
+.social-links a i,
+.social-links a span{
+  position: relative;
+  top: 2px;
+  left: 1px;
+}
