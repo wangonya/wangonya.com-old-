@@ -4,8 +4,6 @@ date: 2019-09-11
 series: A quick reference to Python string methods
 ---
 
-<small>Note: <sup style="color: red">*</sup> represents a required parameter.</small>
-
 ## Cases
 
 ### <a name="capitalize"></a> `capitalize()`
