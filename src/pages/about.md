@@ -8,6 +8,8 @@ Hi 👋🏽 I'm Wangonya, a Software Engineer working mostly with python and jav
   <a href="https://github.com/wangonya" title="Github" target="_blank"><i class="fab fa-github"></i></a>
   <a href="https://dev.to/wangonya" title="Github" target="_blank"><i class="fab fa-dev"></i></a>
   <a href="https://www.linkedin.com/in/wangonya/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href="https://wangonya.com/rss.xml" title="RSS" target="_blank"><i class="fas fa-rss"></i></a>
 </div>
 
 <figure><embed src="https://wakatime.com/share/@wangonya/b432af8e-ef23-408a-9e33-04df1b85aa57.svg"></embed></figure>
