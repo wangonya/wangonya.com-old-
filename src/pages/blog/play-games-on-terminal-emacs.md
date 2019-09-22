@@ -19,9 +19,7 @@ If the command runs successfully, you should see something similar to the screen
 
 ![emacs](/images/emacs.png)
 
-Linux decided to install a GTK+ version 🤷🏽‍♂️
-
-![emacs GTK version](/images/emacs-gtk.png)
+![also emacs](/images/emacs-gtk.png)
 
 Press the **`escape`** then **`x`** keys, and `M-x` should appear at the bottom of the screen.
 
